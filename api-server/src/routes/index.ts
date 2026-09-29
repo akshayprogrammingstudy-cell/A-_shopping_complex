@@ -1,4 +1,4 @@
-import { Router, type IRouter } from "express";
+import { Router } from "express";
 import healthRouter from "./health";
 import {
   getStorefrontSummary,
@@ -16,7 +16,7 @@ import {
   getOrder,
 } from "../lib/store";
 
-const router: IRouter = Router();
+const router = Router();
 
 router.use(healthRouter);
 
