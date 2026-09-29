@@ -1,7 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "services": {
-    "a3-shopping-platform": {
+    "shopping-platform": {
       "root": "a3-shopping-platform",
       "framework": "vite"
     },
@@ -20,7 +20,7 @@
     {
       "source": "/(.*)",
       "destination": {
-        "service": "a3-shopping-platform"
+        "service": "shopping-platform"
       }
     }
   ]
