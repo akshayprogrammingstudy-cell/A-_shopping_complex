@@ -1,27 +1,14 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "services": {
-    "shopping-platform": {
-      "root": "a3-shopping-platform",
-      "framework": "vite"
-    },
-    "api-server": {
-      "root": "api-server",
-      "framework": "express"
-    }
-  },
+  "buildCommand": "pnpm run build",
+  "outputDirectory": "a3-shopping-platform/dist/public",
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": {
-        "service": "api-server"
-      }
+      "destination": "/api"
     },
     {
-      "source": "/(.*)",
-      "destination": {
-        "service": "shopping-platform"
-      }
+      "source": "/((?!api/).*)",
+      "destination": "/index.html"
     }
   ]
 }
