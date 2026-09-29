@@ -7,5 +7,5 @@ export default async function handler(req: any, res: any) {
   } catch (err) {
     console.error("[Vercel API] Database connection error:", err);
   }
-  return app(req, res);
+  return (app as any)(req, res);
 }
