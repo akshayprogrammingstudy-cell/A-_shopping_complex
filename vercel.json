@@ -1,15 +1,27 @@
 {
-  "version": 2,
-  "buildCommand": "pnpm --filter @workspace/a3-shopping-platform run build",
-  "outputDirectory": "a3-shopping-platform/dist/public",
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "services": {
+    "a3-shopping-platform": {
+      "root": "a3-shopping-platform",
+      "framework": "vite"
+    },
+    "api-server": {
+      "root": "api-server",
+      "framework": "express"
+    }
+  },
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "/api/index"
+      "destination": {
+        "service": "api-server"
+      }
     },
     {
       "source": "/(.*)",
-      "destination": "/index.html"
+      "destination": {
+        "service": "a3-shopping-platform"
+      }
     }
   ]
 }
