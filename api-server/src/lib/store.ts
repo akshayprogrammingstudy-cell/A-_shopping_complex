@@ -1,4 +1,4 @@
-import { connectToDatabase, ProductModel, CategoryModel, CustomerModel, CartModel, OrderModel } from "./mongodb";
+import { connectToDatabase, ProductModel, CategoryModel, CustomerModel, CartModel, OrderModel } from "./mongodb.js";
 
 export interface Category {
   id: string;

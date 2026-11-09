@@ -1,5 +1,5 @@
 import { Router } from "express";
-import healthRouter from "./health";
+import healthRouter from "./health.js";
 import {
   getStorefrontSummary,
   listProducts,
@@ -14,7 +14,7 @@ import {
   checkout,
   listCustomerOrders,
   getOrder,
-} from "../lib/store";
+} from "../lib/store.js";
 
 const router = Router();
 
