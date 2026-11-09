@@ -61,6 +61,22 @@ catalogs:
 importers:
 
   .:
+    dependencies:
+      '@workspace/api-zod':
+        specifier: workspace:*
+        version: link:api-zod
+      cors:
+        specifier: ^2.8.6
+        version: 2.8.6
+      express:
+        specifier: ^5.2.1
+        version: 5.2.1
+      mongoose:
+        specifier: ^8.12.0
+        version: 8.24.4
+      zod:
+        specifier: 'catalog:'
+        version: 3.25.76
     devDependencies:
       prettier:
         specifier: ^3.9.6
