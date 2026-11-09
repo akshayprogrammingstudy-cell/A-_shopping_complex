@@ -6,7 +6,7 @@
   "scripts": {
     "preinstall": "echo preinstall",
     "build": "pnpm run typecheck && pnpm -r --if-present run build",
-    "typecheck:libs": "tsc --build",
+    "typecheck:libs": "tsc --build --force",
     "typecheck": "pnpm run typecheck:libs && pnpm -r --if-present run typecheck"
   },
   "private": true,

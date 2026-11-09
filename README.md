@@ -27,18 +27,18 @@ pnpm install
 
 ### 2. Configure Environment Variables
 
-Create a `.env` file in the root directory:
+Copy `.env.example` to `.env` in the root directory. The API runs with in-memory sample data by default. To persist data, set `MONGODB_URI` to your own MongoDB Atlas connection string.
 
 ```env
-MONGODB_URI=mongodb+srv://akshayprogrammingstudy_db_user:zYudTesuxa3OlV93@cluster0.y7blwhd.mongodb.net/a3-shopping?retryWrites=true&w=majority
+MONGODB_URI=
 PORT=5000
 ```
 
 ### 3. Run Locally
 
-Start the backend API server:
+Start the backend API server (this builds it before starting):
 ```bash
-pnpm --filter @workspace/api-server run start
+pnpm --filter @workspace/api-server run dev
 ```
 
 Start the Vite frontend development server:
