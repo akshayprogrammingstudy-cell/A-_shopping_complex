@@ -36,9 +36,6 @@ function toError(value: unknown): Error {
 }
 
 function DefaultFallback({ error, resetError }: ErrorFallbackProps) {
-  const showErrorDetails = import.meta.env.DEV ||
-    (typeof window !== 'undefined' && window.location.hash === '#debug');
-
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-gray-50 p-6">
       <div className="max-w-lg w-full text-center">
@@ -50,7 +47,7 @@ function DefaultFallback({ error, resetError }: ErrorFallbackProps) {
           running.
         </p>
         {/* Dev only: messages can carry API responses and other internals. */}
-        {showErrorDetails ? (
+        {import.meta.env.DEV ? (
           <pre className="mt-4 overflow-x-auto rounded bg-gray-100 p-3 text-left text-xs text-gray-800">
             {error.message || String(error)}
           </pre>
